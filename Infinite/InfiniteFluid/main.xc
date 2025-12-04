@@ -181,15 +181,29 @@ tick
 			var $pulled = pull_fluid("fluid", max(0, $g_accept_fluid*$delta-$g_total_accepted))
 			$pulled = $pulled.composition
 			foreach $pulled ($k, $v)
-				$g_accepted_this_frame.$k += $v
+				if $v == 0
+					continue
+				var $already = $g_accepted_this_frame.$k
+				var $a_mass = $already.m
+				var $t_mass = $a_mass + $v
+				$already.m += $t_mass
+				$already.t = ($a_mass/$t_mass) * $already.t + ($v/$t_mass) * $pulled.temperature
+				$g_accepted_this_frame.$k = $already
 				$g_total_accepted += $v
 
 
 accept_push_fluid ($port :text, $molecule :text, $mass :number, $temperature :number)
 	if $g_enable and $g_accept_fluid > 0
 		var $accepted = min($mass, $g_accept_fluid*$delta - $g_total_accepted)
-		$g_accepted_this_frame.$molecule += $accepted
+
+		var $already = $g_accepted_this_frame.$molecule
+		var $a_mass = $already.m
+		var $t_mass = $a_mass + $accepted
+		$already.m += $t_mass
+		$already.t = ($a_mass/$t_mass) * $already.t + ($accepted/$t_mass) * $temperature
+		$g_accepted_this_frame.$molecule = $already
 		$g_total_accepted += $accepted
+
 		$mass -= $accepted
 
 accept_push_fluid_potential ($port :text, $potential :number)

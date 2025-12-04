@@ -33,4 +33,4 @@ Connect the fluid port. Then you can configure the component via the **V** menu 
 | Channel | Function | Value |
 |---|---|---|
 | 0 | Fluid sent | [Key-value](https://wiki.archean.space/xenoncode/documentation.md#key-value-objects) |
-| 1 | Fluid received | [Key-value](https://wiki.archean.space/xenoncode/documentation.md#key-value-objects) |
+| 1 | Fluid received | [Key-value](https://wiki.archean.space/xenoncode/documentation.md#key-value-objects) (`.H2O{.m{27}.t{293.15}}`)|

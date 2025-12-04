@@ -34,8 +34,8 @@ input.0 ($io_input :number)
 
 
 init
-	toggle_renderable("ValveHandle", $style == 0)
-	toggle_renderable("ValveKnob", $style == 1)
+	toggle_renderable("Handle", $style == 0)
+	toggle_renderable("Knob", $style == 1)
 	@animate_valve(1)
 
 tick

@@ -140,7 +140,7 @@
 			"count":1344,
 			"max":[
 				0.05000000074505806,
-				0.06499999016523361,
+				0.09750863164663315,
 				0.05000000074505806
 			],
 			"min":[
@@ -193,15 +193,15 @@
 		{
 			"bufferView":6,
 			"componentType":5126,
-			"count":168,
+			"count":488,
 			"max":[
 				0.025000005960464478,
-				0.06948529183864594,
+				0.10448528826236725,
 				0.025000018998980522
 			],
 			"min":[
 				-0.056919489055871964,
-				0.045250002294778824,
+				0.08025000244379044,
 				-0.025000005960464478
 			],
 			"type":"VEC3"
@@ -209,13 +209,13 @@
 		{
 			"bufferView":7,
 			"componentType":5126,
-			"count":168,
+			"count":488,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":8,
 			"componentType":5123,
-			"count":354,
+			"count":1308,
 			"type":"SCALAR"
 		},
 		{
@@ -224,12 +224,12 @@
 			"count":178,
 			"max":[
 				-0.05691947415471077,
-				0.07061030715703964,
+				0.10561030358076096,
 				0.026250053197145462
 			],
 			"min":[
 				-0.18924009799957275,
-				0.06086030602455139,
+				0.0958603024482727,
 				-0.026249980553984642
 			],
 			"type":"VEC3"
@@ -252,12 +252,12 @@
 			"count":1767,
 			"max":[
 				0.08999999612569809,
-				0.07499588280916214,
+				0.10999587923288345,
 				0.08999999612569809
 			],
 			"min":[
 				-0.08999999612569809,
-				0.045249998569488525,
+				0.08024999499320984,
 				-0.08999999612569809
 			],
 			"type":"VEC3"
@@ -280,12 +280,12 @@
 			"count":556,
 			"max":[
 				0.017320508137345314,
-				0.06499999016523361,
+				0.09999998658895493,
 				0.019999999552965164
 			],
 			"min":[
 				-0.017320508137345314,
-				0.04499998688697815,
+				0.07999998331069946,
 				-0.019999999552965164
 			],
 			"type":"VEC3"
@@ -342,80 +342,80 @@
 		},
 		{
 			"buffer":0,
-			"byteLength":2016,
+			"byteLength":5856,
 			"byteOffset":54720,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":2016,
-			"byteOffset":56736,
+			"byteLength":5856,
+			"byteOffset":60576,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":708,
-			"byteOffset":58752,
+			"byteLength":2616,
+			"byteOffset":66432,
 			"target":34963
 		},
 		{
 			"buffer":0,
 			"byteLength":2136,
-			"byteOffset":59460,
+			"byteOffset":69048,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":2136,
-			"byteOffset":61596,
+			"byteOffset":71184,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":732,
-			"byteOffset":63732,
+			"byteOffset":73320,
 			"target":34963
 		},
 		{
 			"buffer":0,
 			"byteLength":21204,
-			"byteOffset":64464,
+			"byteOffset":74052,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":21204,
-			"byteOffset":85668,
+			"byteOffset":95256,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":17436,
-			"byteOffset":106872,
+			"byteOffset":116460,
 			"target":34963
 		},
 		{
 			"buffer":0,
 			"byteLength":6672,
-			"byteOffset":124308,
+			"byteOffset":133896,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":6672,
-			"byteOffset":130980,
+			"byteOffset":140568,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":3084,
-			"byteOffset":137652,
+			"byteOffset":147240,
 			"target":34963
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":140736,
+			"byteLength":150324,
 			"uri":"ValveHandle.bin"
 		}
 	]
