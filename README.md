@@ -14,7 +14,6 @@ collection or automated configuration.
 - [InfiniteItems](./Infinite/InfiniteItems/InfiniteItems.md)
 - [InfiniteLV](./Infinite/InfiniteLV/InfiniteLV.md)
 
----
 
 ## Clock
 ![Clock](./images/Clock.png)
@@ -24,9 +23,9 @@ Analog clock that can display the real world time, or any time you want.
 #### Documentation:
 - [Clock](./Clock/Clock.md)
 
----
 
 ## ValveHandle
+![ValveHandle](./images/ValveHandle.png)
 
 Simple valve looking component that behaves like a switch.
 
@@ -34,3 +33,9 @@ Simple valve looking component that behaves like a switch.
 - [ValveHandle](./ValveHandle/ValveHandle.md)
 
 ---
+
+## Install
+
+- download the Mannchen-mods.zip from releases
+- unzip and copy the components you want into `Archean-game/modules/ARCHEAN_mod/components`
+- (optional) for crafting recipes copy `config.yaml` into `Archean-game/modules/ARCHEAN_mod`
