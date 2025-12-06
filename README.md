@@ -1,8 +1,15 @@
 # Archean Mods
 
+- Mods
+  - [Infinite](#Infinite)
+  - [Clock](#Clock)
+  - [ValveHandle](#ValveHandle)
+- [Install](#Install)
+
 ---
 
 ## Infinite
+![Infinite](./images/Infinite.png)
 
 Configurable infinite power, fluid, item, and data sources and consumers. All come with data ports for statistics
 collection or automated configuration.
@@ -38,4 +45,3 @@ Simple valve looking component that behaves like a switch.
 
 - download the Mannchen-mods.zip from releases
 - unzip and copy the components you want into `Archean-game/modules/ARCHEAN_mod/components`
-- (optional) for crafting recipes copy `config.yaml` into `Archean-game/modules/ARCHEAN_mod`
