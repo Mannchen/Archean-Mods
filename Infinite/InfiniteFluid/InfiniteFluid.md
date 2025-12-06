@@ -15,9 +15,9 @@
 Infinite Fluid is a creative component that can provide and consume a user specified amount of fluid.
 
 # Usage
-Connect the fluid port. Then you can configure the component via the **V** menu or using dataport inputs.
+Connect the fluid port. Then you can configure the component via the **V** menu or via dataport inputs if `Allow dataport configuration` is checked.
 
-> The component can output nonexistant fluids and updates ouput while you are typing. So it is a good idea to disable it while you change the `Output Fluid` field.
+> The component can output nonexistant fluids and `Output Fluid` updates while you are typing. So it is a good idea to disable the component while you change the `Output Fluid` field.
 
 ### List of inputs
 | Channel | Function | Value |

@@ -14,7 +14,7 @@
 Infinite Data is a component that outputs user specified data on the blue dataport.
 
 # Usage
-Connect the blue dataport. Then you can configure outputs via the **V** menu or the green dataport.  
+Connect the blue dataport. Then you can configure outputs via the **V** menu or via the green dataport if `Allow dataport configuration` is checked.  
 If `Only output changes` is active `Recieved Data` will only contain data that has changed since last tick.
 
 

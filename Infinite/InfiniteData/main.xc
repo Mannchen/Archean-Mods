@@ -4,6 +4,7 @@
 #DATAPORT "data.0" output.0 "Received Data (.cX{data}...)"
 
 #INFO checkbox "enable" 1 "Enable"
+#INFO checkbox "enable_data" 0 "Allow dataport configuration"
 #INFO checkbox "changes_only" 0 "Only receive changes"
 
 #INFO text "ch_0" "" " 0"
@@ -198,6 +199,9 @@ var $prev_ch_19 :text
 
 
 input.0 ($enable :text, $send_data :text, $changes_only :text)
+	if get_info("enable_data") == 0
+		return
+
 	if $enable != ""
 		$g_enable = $enable != 0
 

@@ -6,10 +6,11 @@
 #DATAPORT "data" input.5 "Pull Fluid (0/1)"
 
 
-#DATAPORT "data" output.0 "Fluid sent (kv)"
-#DATAPORT "data" output.1 "Fluid received (kv)"
+#DATAPORT "data" output.0 "Fluid sent (k-v)"
+#DATAPORT "data" output.1 "Fluid received (k-v)"
 
 #INFO checkbox "enable" 1 "Enable"
+#INFO checkbox "enable_data" 0 "Allow dataport configuration"
 #INFO text "send_fluid" "" "Output Fluid (.molecule{kg}...)"
 #INFO checkbox "push" 1 "Push Fluid"
 #INFO text "temp" "293.15" "Fluid Temperature"
@@ -90,6 +91,9 @@ init
 
 
 input.0 ($enable :text, $send_fluid :text, $fluid_temp :text, $accept_fluid :text, $push_fluid :text, $pull_fluid :text)
+	if get_info("enable_data") == 0
+		return
+
 	if $enable != ""
 		$g_enable = $enable :number
 	if $send_fluid != ""

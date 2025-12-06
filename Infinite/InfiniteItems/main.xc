@@ -6,6 +6,7 @@
 #DATAPORT "data" output.1 "Items received"
 
 #INFO checkbox "enable" 1 "Enable"
+#INFO checkbox "enable_data" 0 "Allow dataport configuration"
 #INFO checkbox "pull" 0 "Pull items"
 #INFO text "itemname" "" "Item name / filter"
 #INFO text "count" "0" "Item count"
@@ -33,6 +34,9 @@ function @valid_itemname($name :text) :number
 	return 1
 
 input.0 ($enable :text, $send_items :text, $pull_items :text)
+	if get_info("enable_data") == 0
+		return
+
 	if $enable != ""
 		$g_enable = $enable :number
 	if $send_items != ""
@@ -87,13 +91,19 @@ tick
 		; push and pull items
 		if $g_data_mode
 			$pushed = push_item("item", $g_send_items.itemName, $g_send_items.properties, $g_send_items.count:number)
-			$pulled = pull_item("item", $g_pull_items.itemName, $g_pull_items.maxCount:number, $g_pull_items.maxMass:number)
+			var $has_pull_count = 0
+			foreach $g_pull_items ($k, $v)
+				if $k == "maxCount"
+					$has_pull_count = 1
+					break
+			if $has_pull_count
+				$pulled = pull_item("item", $g_pull_items.itemName, $g_pull_items.maxCount:number, $g_pull_items.maxMass:number)
 
 		else
-			if $g_item_name != ""
-				if $g_pull and $g_item_count > 0
-					$pulled = pull_item("item", $g_item_name, $g_item_count, 0)
-				else
+			if $g_pull
+				$pulled = pull_item("item", $g_item_name, $g_item_count, 0)
+			else
+				if $g_item_name != ""
 					$pushed = push_item("item", $g_item_name, "", $g_item_count)
 
 	output.0($pushed, $pulled)

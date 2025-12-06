@@ -14,7 +14,7 @@
 Infinite LV is a creative component that can provide or consume a user specified amount of LV power
 
 # Usage
-Connect the LV port. Then you can specify the amount of power consumed or provided using the **V** menu or via dataport input
+Connect the LV port. Then you can specify the amount of power consumed or provided using the **V** menu or via the dataport if `Allow dataport configuration` is checked.
 
 ### List of inputs
 | Channel | Function | Value |

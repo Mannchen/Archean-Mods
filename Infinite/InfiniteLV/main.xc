@@ -7,6 +7,7 @@
 #DATAPORT "data" output.1 "Power consumed (W)"
 
 #INFO checkbox "enable" 1 "Enable"
+#INFO checkbox "enable_data" 0 "Allow dataport configuration"
 #INFO text "send_p" "52" "Output Power (kW)"
 #INFO text "send_v" "52" "Output Voltage"
 #INFO text "receive_w" "0" "Consume Power (kW)"
@@ -73,6 +74,9 @@ array $output_power_acc :number
 
 
 input.0 ($enable :text, $send_power :text, $send_volts :text, $receive_power :text)
+	if get_info("enable_data") == 0
+		return
+
 	if $enable != ""
 		$g_enable = $enable :number
 	if $send_power != ""

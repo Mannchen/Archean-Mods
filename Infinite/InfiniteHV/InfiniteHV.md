@@ -14,7 +14,7 @@
 Infinite HV is a creative component that can provide or consume a user specified amount of HV power
 
 # Usage
-Connect the HV port. Then you can specify the amount of power consumed or provided using the **V** menu or via dataport input
+Connect the HV port. Then you can specify the amount of power consumed or provided using the **V** menu or via dataport input if `Allow dataport configuration` is checked.
 
 ### List of inputs
 | Channel | Function | Value |
