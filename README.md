@@ -43,11 +43,7 @@ Simple valve looking component that behaves like a switch.
 
 ## Install
 
-<<<<<<< HEAD
-- download the Mod.zip
-=======
 - download the latest release zip
->>>>>>> 3c1541e ( * added zip links to README.md)
   - [Clock.zip](https://github.com/Mannchen/Archean-Mods/releases/latest/download/Clock.zip)
   - [Infinite.zip](https://github.com/Mannchen/Archean-Mods/releases/latest/download/Infinite.zip)
   - [ValveHandle.zip](https://github.com/Mannchen/Archean-Mods/releases/latest/download/ValveHandle.zip)
