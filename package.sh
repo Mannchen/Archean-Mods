@@ -51,8 +51,8 @@ for package in $packages; do
 
 	echo "Zipping '$package_zip' ($temp_dir)"
 	abs_zip_path=$(realpath -E "$package_zip")
-	pushd "$output_dir" >/dev/null
-	zip -r "$abs_zip_path" "./$packagename"
+	pushd "$temp_dir" >/dev/null
+	zip -r "$abs_zip_path" "./"
 	popd >/dev/null
 
 done
