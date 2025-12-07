@@ -43,5 +43,5 @@ Simple valve looking component that behaves like a switch.
 
 ## Install
 
-- download the Mannchen-mods.zip from releases
+- download the Mod.zip from releases
 - unzip and copy the components you want into `Archean-game/modules/ARCHEAN_mod/components`
