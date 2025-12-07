@@ -43,5 +43,9 @@ Simple valve looking component that behaves like a switch.
 
 ## Install
 
-- download the Mod.zip from releases
+- download the Mod.zip
+  - [Clock.zip](https://github.com/Mannchen/Archean-Mods/releases/latest/download/Clock.zip)
+  - [Infinite.zip](https://github.com/Mannchen/Archean-Mods/releases/latest/download/Infinite.zip)
+  - [ValveHandle.zip](https://github.com/Mannchen/Archean-Mods/releases/latest/download/ValveHandle.zip)
+  - [_All-mods.zip](https://github.com/Mannchen/Archean-Mods/releases/latest/download/_All-mods.zip)
 - unzip and copy the components you want into `Archean-game/modules/ARCHEAN_mod/components`
