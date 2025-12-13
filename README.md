@@ -39,6 +39,16 @@ Simple valve looking component that behaves like a switch.
 #### Documentation:
 - [ValveHandle](./ValveHandle/ValveHandle.md)
 
+
+## AirtightDoor
+![AirtightDoors](./images/AirtightDoors.png)
+
+Marine style manually operated airtight door.
+
+#### Documentation:
+- [AirtightDoorL](./AirtightDoor/AirtightDoorL/AirtightDoorL.md)
+- [AirtightDoorR](./AirtightDoor/AirtightDoorR/AirtightDoorR.md)
+
 ---
 
 ## Install
@@ -47,5 +57,7 @@ Simple valve looking component that behaves like a switch.
   - [Clock.zip](https://github.com/Mannchen/Archean-Mods/releases/latest/download/Clock.zip)
   - [Infinite.zip](https://github.com/Mannchen/Archean-Mods/releases/latest/download/Infinite.zip)
   - [ValveHandle.zip](https://github.com/Mannchen/Archean-Mods/releases/latest/download/ValveHandle.zip)
+  - [AirtightDoor.zip](https://github.com/Mannchen/Archean-Mods/releases/latest/download/AirtightDoor.zip)
   - [_All-mods.zip](https://github.com/Mannchen/Archean-Mods/releases/latest/download/_All-mods.zip)
+
 - unzip and copy the components you want into `Archean-game/modules/ARCHEAN_mod/components`
