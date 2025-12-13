@@ -16,7 +16,7 @@ Always airtight even when open.
 
 # Usage
 Press on the door to open/close.  
-Press on the turnhandle to lock/unlock.
+Press on the round handle to lock/unlock.
 
 Door can be locked from the dataport.
 
