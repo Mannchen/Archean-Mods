@@ -1,13 +1,13 @@
-#DATAPORT "data" input.0 "Enable (0/1)"
-#DATAPORT "data" input.1 "Output Fluid (.molecule{kg}...)"
-#DATAPORT "data" input.2 "Output FLuid temperature (K)"
-#DATAPORT "data" input.3 "Accept Fluid (maxMass)"
-#DATAPORT "data" input.4 "Push Fluid (0/1)"
-#DATAPORT "data" input.5 "Pull Fluid (0/1)"
+#DATAPORT input "data" 0 "Enable (0/1)"
+#DATAPORT input "data" 1 "Output Fluid (.molecule{kg}...)"
+#DATAPORT input "data" 2 "Output FLuid temperature (K)"
+#DATAPORT input "data" 3 "Accept Fluid (maxMass)"
+#DATAPORT input "data" 4 "Push Fluid (0/1)"
+#DATAPORT input "data" 5 "Pull Fluid (0/1)"
 
 
-#DATAPORT "data" output.0 "Fluid sent (k-v)"
-#DATAPORT "data" output.1 "Fluid received (k-v)"
+#DATAPORT output "data" 0 "Fluid sent (k-v)"
+#DATAPORT output "data" 1 "Fluid received (k-v)"
 
 #INFO checkbox "enable" 1 "Enable"
 #INFO checkbox "enable_data" 0 "Allow dataport configuration"

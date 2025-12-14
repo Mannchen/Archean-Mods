@@ -1,5 +1,5 @@
-#DATAPORT "data" input.0 "I/O Input"
-#DATAPORT "data" output.0 "Open"
+#DATAPORT input "data" 0 "I/O Input"
+#DATAPORT output "data" 0 "Open"
 
 #INFO drag "style" 0 0 1 1 "Valve Style"
 #INFO checkbox "input" 0 "I/O Input"

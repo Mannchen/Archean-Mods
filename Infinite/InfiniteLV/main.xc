@@ -1,10 +1,10 @@
-#DATAPORT "data" input.0 "Enable"
-#DATAPORT "data" input.1 "Output Power (W)"
-#DATAPORT "data" input.2 "Output Voltage"
-#DATAPORT "data" input.3 "Consume Power (W)"
+#DATAPORT input "data" 0 "Enable"
+#DATAPORT input "data" 1 "Output Power (W)"
+#DATAPORT input "data" 2 "Output Voltage"
+#DATAPORT input "data" 3 "Consume Power (W)"
 
-#DATAPORT "data" output.0 "Power sent (W)"
-#DATAPORT "data" output.1 "Power consumed (W)"
+#DATAPORT output "data" 0 "Power sent (W)"
+#DATAPORT output "data" 1 "Power consumed (W)"
 
 #INFO checkbox "enable" 1 "Enable"
 #INFO checkbox "enable_data" 0 "Allow dataport configuration"

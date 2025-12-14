@@ -1,7 +1,7 @@
-#DATAPORT "data.0" input.0 "Enable (0|1)"
-#DATAPORT "data.0" input.1 "Send Data (.c0{data}.c1{data}....c19{data})"
-#DATAPORT "data.0" input.2 "Only output changes (0|1)"
-#DATAPORT "data.0" output.0 "Received Data (.cX{data}...)"
+#DATAPORT input "data.0" 0 "Enable (0|1)"
+#DATAPORT input "data.0" 1 "Send Data (.c0{data}.c1{data}....c19{data})"
+#DATAPORT input "data.0" 2 "Only output changes (0|1)"
+#DATAPORT output "data.0" 0 "Received Data (.cX{data}...)"
 
 #INFO checkbox "enable" 1 "Enable"
 #INFO checkbox "enable_data" 0 "Allow dataport configuration"

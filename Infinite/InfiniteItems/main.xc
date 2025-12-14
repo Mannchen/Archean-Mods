@@ -1,9 +1,9 @@
-#DATAPORT "data" input.0 "Enable"
-#DATAPORT "data" input.1 "Push Items (.itemName{}.properties{}.count{})"
-#DATAPORT "data" input.2 "Pull Items (.itemName{}[.maxCount{}|.maxMass{}])"
+#DATAPORT input "data" 0 "Enable"
+#DATAPORT input "data" 1 "Push Items (.itemName{}.properties{}.count{})"
+#DATAPORT input "data" 2 "Pull Items (.itemName{}[.maxCount{}|.maxMass{}])"
 
-#DATAPORT "data" output.0 "Items sent"
-#DATAPORT "data" output.1 "Items received"
+#DATAPORT output "data" 0 "Items sent"
+#DATAPORT output "data" 1 "Items received"
 
 #INFO checkbox "enable" 1 "Enable"
 #INFO checkbox "enable_data" 0 "Allow dataport configuration"

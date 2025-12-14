@@ -1,8 +1,7 @@
-#DATAPORT "data" input.0 "Time (s)"
+#DATAPORT input "data" 0 "Time (s)"
 
 #INFO checkbox "realtime" 0 "show real time"
 #INFO drag "offset" 0 -11 11 1 "Hour offset"
-#INFO text_info "Debug" "" "Debug"
 
 include "unix_datetime.xc"
 
