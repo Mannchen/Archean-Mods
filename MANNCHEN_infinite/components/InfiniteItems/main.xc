@@ -38,7 +38,7 @@ input.0 ($enable :text, $send_items :text, $pull_items :text)
 		return
 
 	if $enable != ""
-		$g_enable = $enable :number
+		$g_enable = !(!$enable)
 	if $send_items != ""
 		$g_send_items = $send_items
 		$g_data_mode = 1

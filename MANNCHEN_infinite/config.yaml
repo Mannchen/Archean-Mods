@@ -1,0 +1,30 @@
+items:
+  MANNCHEN_Infinite.InfiniteLV:
+    max_stack: 256
+  MANNCHEN_Infinite.InfiniteHV:
+    max_stack: 256
+  MANNCHEN_Infinite.InfiniteItems:
+    max_stack: 256
+  MANNCHEN_Infinite.InfiniteFluid:
+    max_stack: 256
+  MANNCHEN_Infinite.InfiniteData:
+    max_stack: 256
+
+inventory_creative_backpack:
+  - MANNCHEN_Infinite.InfiniteLV
+  - MANNCHEN_Infinite.InfiniteHV
+  - MANNCHEN_Infinite.InfiniteItems
+  - MANNCHEN_Infinite.InfiniteFluid
+  - MANNCHEN_Infinite.InfiniteData
+
+recipes:
+  - label: InfiniteData
+    context: crafter
+    category: components
+    time: 1
+    input:
+      ARCHEAN_parts.Casing: 1
+      ARCHEAN_parts.Connector: 2
+      ARCHEAN_parts.Circuit: 1
+    output:
+      MANNCHEN_Infinite.InfiniteData: 1

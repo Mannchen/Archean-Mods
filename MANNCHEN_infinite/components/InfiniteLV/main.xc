@@ -78,12 +78,12 @@ input.0 ($enable :text, $send_power :text, $send_volts :text, $receive_power :te
 		return
 
 	if $enable != ""
-		$g_enable = $enable :number
-	if $send_power != ""
+		$g_enable = !(!$enable)
+	if $send_power != "" and isnumeric($send_power)
 		$g_send_power = $send_power :number
-	if $send_volts != ""
+	if $send_volts != "" and isnumeric($send_volts)
 		$g_send_volts = $send_volts :number
-	if $receive_power != ""
+	if $receive_power != "" and isnumeric($receive_power)
 		$g_receive_power = $receive_power :number
 
 	$enable = ""

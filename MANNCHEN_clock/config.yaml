@@ -1,0 +1,17 @@
+items:
+  MANNCHEN_Clock.Clock:
+    max_stack: 64
+
+inventory_creative_backpack:
+  - MANNCHEN_Clock.Clock
+
+recipes:
+  - label: Clock
+    context: crafter
+    category: components
+    time: 2
+    input:
+      ARCHEAN_parts.Casing: 1
+      ARCHEAN_parts.Connector: 1
+    output:
+      MANNCHEN_Clock.Clock: 1

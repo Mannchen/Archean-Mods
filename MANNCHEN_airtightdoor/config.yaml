@@ -1,0 +1,34 @@
+items:
+  MANNCHEN_AirtightDoor.AirtightDoorL:
+    max_stack: 12
+  MANNCHEN_AirtightDoor.AirtightDoorR:
+    max_stack: 12
+
+inventory_creative_backpack:
+  - MANNCHEN_AirtightDoor.AirtightDoorL
+  - MANNCHEN_AirtightDoor.AirtightDoorR
+
+recipes:
+  - label: AirtightDoorL
+    context: crafter
+    category: components
+    time: 5
+    input:
+      ARCHEAN_parts.Casing: 40
+      ARCHEAN_parts.Screw: 40
+      ARCHEAN_build.SmallHinge: 2
+      Archean_build.SteelBlock: 20
+    output:
+      MANNCHEN_AirtightDoor.AirtightDoorL: 1
+
+  - label: AirtightDoorR
+    context: crafter
+    category: components
+    time: 5
+    input:
+      ARCHEAN_parts.Casing: 40
+      ARCHEAN_parts.Screw: 40
+      ARCHEAN_build.SmallHinge: 2
+      Archean_build.SteelBlock: 20
+    output:
+      MANNCHEN_AirtightDoor.AirtightDoorR: 1

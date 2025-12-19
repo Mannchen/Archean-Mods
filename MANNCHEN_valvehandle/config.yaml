@@ -1,0 +1,17 @@
+items:
+  MANNCHEN_ValveHandle.ValveHandle:
+    max_stack: 256
+
+inventory_creative_backpack:
+  - MANNCHEN_ValveHandle.ValveHandle
+
+recipes:
+  - label: Valve Handle
+    context: crafter
+    category: components
+    time: 1
+    input:
+      ARCHEAN_celestial.Iron: 10
+      ARCHEAN_parts.Connector: 1
+    output:
+    MANNCHEN_ValveHandle.ValveHandle: 1

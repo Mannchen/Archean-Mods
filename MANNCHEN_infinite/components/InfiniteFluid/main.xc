@@ -95,16 +95,16 @@ input.0 ($enable :text, $send_fluid :text, $fluid_temp :text, $accept_fluid :tex
 		return
 
 	if $enable != ""
-		$g_enable = $enable :number
+		$g_enable = !(!$enable)
 	if $send_fluid != ""
 		$g_send_fluid = upper($send_fluid)
-	if $fluid_temp != ""
+	if $fluid_temp != "" and isnumeric($fluid_temp)
 		$g_temp = $fluid_temp :number
-	if $accept_fluid != ""
+	if $accept_fluid != "" and isnumeric($accept_fluid)
 		$g_accept_fluid = $accept_fluid :number
-	if $push_fluid != ""
+	if $push_fluid != "" and isnumeric($push_fluid)
 		$g_push = $push_fluid :number
-	if $pull_fluid != ""
+	if $pull_fluid != "" and isnumeric($pull_fluid)
 		$g_pull = $pull_fluid :number
 
 	$enable = ""

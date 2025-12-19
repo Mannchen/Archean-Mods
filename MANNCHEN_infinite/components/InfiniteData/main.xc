@@ -203,7 +203,7 @@ input.0 ($enable :text, $send_data :text, $changes_only :text)
 		return
 
 	if $enable != ""
-		$g_enable = $enable != 0
+		$g_enable = !(!$enable)
 
 	if $send_data != ""
 		foreach $send_data ($k,$v)
