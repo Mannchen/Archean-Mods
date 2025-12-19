@@ -61,4 +61,4 @@ Marine style manually operated airtight door.
   - [AirtightDoor.zip](https://github.com/Mannchen/Archean-Mods/releases/latest/download/AirtightDoor.zip)
   - [_All-mods.zip](https://github.com/Mannchen/Archean-Mods/releases/latest/download/_All-mods.zip)
 
-- unzip and copy the components you want into `Archean-game/modules/ARCHEAN_mod/components`
+- unzip and copy the mods you want into `...steamapps/common/Archean/Archean-data/mods/`.
