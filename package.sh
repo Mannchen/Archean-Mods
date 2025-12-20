@@ -28,7 +28,7 @@ for package in $packages; do
 	echo "  packaging '$packagename' ($package_dir)"
 	mkdir "$package_output_dir"
 
-	search_dirs=$(find "$package_dir" -type d  -regex "\(.+/\..+\|$package_dir/out\)" -prune -false -or -type d -regextype grep -regex "\(.*\|^\)${vendor}_[[:lower:][:digit:]]\{1,12\}")
+	search_dirs=$(find "$package_dir" -type d  -regex "\(.+/\..+\|$package_dir/out\)" -prune -false -or -type d -regextype grep -regex "\(.*\|^\)${vendor}_[[:lower:][:digit:]]\{3,12\}")
 
 	changes=""
 
@@ -66,10 +66,14 @@ for package in $packages; do
 						cp "$dir/$name.png" "$component_output_dir/$name.png"
 						[ "$dir/$name.png" -nt "$package_zip" ] && changes="yes"
 					fi
-					if [ -f "$dir/main.xc" ]; then
-						cp "$dir/main.xc" "$component_output_dir/main.xc"
-						[ "$dir/main.xc" -nt "$package_zip" ] && changes="yes"
-					fi
+					# TODO: add files created for sharp edges
+
+					# add all xc files
+					xenoncode_files=$(find "$dir" -type f -name "*.xc") 
+					for xc_file in $xenoncode_files; do
+						cp "$xc_file" "$component_output_dir/"
+						[ "$xc_file" -nt "$package_zip" ] && changes="yes"
+					done
 				else
 					echo "'$dir' is not a component."
 				fi
