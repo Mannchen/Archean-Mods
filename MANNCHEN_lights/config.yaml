@@ -1,0 +1,19 @@
+items:
+  MANNCHEN_lights.RotaryLight:
+    max_stack: 128
+
+inventory_creative_backpack:
+  - MANNCHEN_lights.RotaryLight
+
+recipes:
+  - label: RotaryLight
+    context: crafter
+    category: components
+    time: 1
+    input:
+      ARCHEAN_parts.Casing: 1
+      ARCHEAN_parts.Connector: 2
+      ARCHEAN_parts.LED: 80
+      ARCHEAN_parts.Motor: 1
+    output:
+      MANNCHEN_lights.RotaryLight : 1

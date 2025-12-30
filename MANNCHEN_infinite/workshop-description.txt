@@ -1,0 +1,118 @@
+[code]ModID: MANNCHEN_infinite[/code]
+
+[h1] Infinite source/sink [/h1]
+[h2] for power, items, fluid, data [/h2]
+
+Configurable infinite source / sink for power, fluid, items and data
+intended to make creative testing easier.
+Configurable in the [b]V[/b] menu or with the data port.
+
+
+[h2] Documentation [/h2]
+[h3] Infinite LV / HV [/h3]
+
+[u] Description [/u]
+Infinite LV is a creative component that can provide or consume a user specified amount of LV power
+
+[u] Usage [/u]
+Connect the LV port. Then you can specify the amount of power consumed or provided using the [b]V[/b] menu or via the dataport if [i]Allow dataport configuration[/i] is checked.
+
+[u] List of inputs [/u]
+[table]
+[tr] [th] Channel [/th] [th] Function [/th] [th] Value [/th] [/tr]
+[tr] [td] 0 [/td] [td] Enable input output [/td] [td] [i]0[/i] or [i]1[/i] [/td] [/tr]
+[tr] [td] 1 [/td] [td] Output Power (Watts) [/td] [td] Number [/td] [/tr]
+[tr] [td] 2 [/td] [td] Output Voltage [/td] [td] Number [/td] [/tr]
+[tr] [td] 3 [/td] [td] Consume Power (Watts) [/td] [td] Number [/td] [/tr]
+[/table]
+
+[u] List of outputs [/u]
+[table]
+[tr] [th] Channel [/th] [th] Function [/th] [/tr]
+[tr] [td] 0 [/td] [td] Power sent (Watts) [/td] [/tr]
+[tr] [td] 1 [/td] [td] Power consumed (Watts) [/td] [/tr]
+[/table]
+
+
+[h3] Infinite Items [/h3]
+
+[u] Description [/u]
+Infinite Items is a creative component that can push and pull a user specified amount of items 
+
+[u] Usage [/u]
+Connect the Item port. Then you can specify the name and amount of items provided via the [b]V[/b] menu.  
+You can also configure the component via the data port if [i]Allow dataport configuration[/i] is checked.  
+If no item name is provided [i]Pull[/i] will pull any item.  
+Item amount is per tick (25 times per second)
+[code]Some features like item properties, max mass and simultaneous push and pull are only available using dataport configuration [/code]
+
+[u] List of inputs [/u]
+[table]
+[tr] [th] Channel [/th] [th] Function [/th] [th] Value [/th] [/tr]
+[tr] [td] 0 [/td] [td] Enable input output [/td] [td] [i]0[/i] or [i]1[/i] [/td] [/tr]
+[tr] [td] 1 [/td] [td] Push Items [/td] [td] [i]Key-value[/i]  ([i].itemName{}.properties{}.count{}[/i]) [/td] [/tr]
+[tr] [td] 2 [/td] [td] Pull Items [/td] [td] [i]Key-value[/i]  ([i].itemName{}.maxCount{}.maxMass{}[/i]) [/td] [/tr]
+[/table]
+[code]Pull Items: if [i]maxMass[/i] is specified (and not [i]0[/i]) then [i]maxCount[/i] is ignored [/code]
+[code]Pull Items: if [i]maxCount[/i] is specified and [i]0[/i] then as many items as possible are pulled [/code]
+
+[u] List of outputs [/u]
+[table]
+[tr] [th] Channel [/th] [th] Function [/th] [th] Value [/th] [/tr]
+[tr] [td] 0 [/td] [td] Items sent [/td] [td] [i]Key-value[/i]  [/td] [/tr]
+[tr] [td] 1 [/td] [td] Items received [/td] [td] [i]Key-value[/i]  [/td] [/tr]
+[/table]
+
+
+[h3] Infinite Fluid [/h3]
+
+[u] Description [/u]
+Infinite Fluid is a creative component that can provide and consume a user specified amount of fluid.
+
+[u] Usage [/u]
+Connect the fluid port. Then you can configure the component via the [b]V[/b] menu or via dataport inputs if [i]Allow dataport configuration[/i] is checked.
+
+[code]The component can output nonexistant fluids and [i]Output Fluid[/i] updates while you are typing. So it is a good idea to disable the component while you change the [i]Output Fluid[/i] field. [/code]
+
+[u] List of inputs [/u]
+[table]
+[tr] [th] Channel [/th] [th] Function [/th] [th] Value [/th] [/tr]
+[tr] [td] 0 [/td] [td] Enable input output [/td] [td] [i]0[/i] or [i]1[/i] [/td] [/tr]
+[tr] [td] 1 [/td] [td] Output Fluid [/td] [td] [i]Key-value[/i]  ([i].H2O{100}.CO2{5}[/i]) [/td] [/tr]
+[tr] [td] 2 [/td] [td] Output Fluid temperature (Kelvin) [/td] [td] Number [/td] [/tr]
+[tr] [td] 3 [/td] [td] Accept Fluid (kg/s) [/td] [td] Number [/td] [/tr]
+[tr] [td] 4 [/td] [td] Push Fluid [/td] [td] [i]0[/i] or [i]1[/i] [/td] [/tr]
+[tr] [td] 5 [/td] [td] Pull Fluid [/td] [td] [i]0[/i] or [i]1[/i] [/td] [/tr]
+[/table]
+
+[u] List of outputs [/u]
+[table]
+[tr] [th] Channel [/th] [th] Function [/th] [th] Value [/th] [/tr]
+[tr] [td] 0 [/td] [td] Fluid sent [/td] [td] [i]Key-value[/i]  [/td] [/tr]
+[tr] [td] 1 [/td] [td] Fluid received [/td] [td] [i]Key-value[/i]  ([i].H2O{.m{27}.t{293.15}}[/i])[/td] [/tr]
+[/table]
+
+
+[h3] Infinite Data [/h3]
+
+[u] Description [/u]
+Infinite Data is a component that outputs user specified data on the blue dataport.
+
+[u] Usage [/u]
+Connect the blue dataport. Then you can configure outputs via the [b]V[/b] menu or via the green dataport if [i]Allow dataport configuration[/i] is checked.  
+If [i]Only output changes[/i] is active [i]Recieved Data[/i] will only contain data that has changed since last tick.
+
+
+[u] List of inputs [/u]
+[table]
+[tr] [th] Channel [/th] [th] Function [/th] [th] Value [/th] [/tr]
+[tr] [td] 0 [/td] [td] Enable input output [/td] [td] [i]0[/i] or [i]1[/i] [/td] [/tr]
+[tr] [td] 1 [/td] [td] Send Data [/td] [td] [i]Key-value[/i]  ([i].c0{data}[/i] ... [i].c19{data}[/i]) [/td] [/tr]
+[tr] [td] 2 [/td] [td] Only output changes [/td] [td] [i]0[/i] or [i]1[/i] [/td] [/tr]
+[/table]
+
+[u] List of outputs [/u]
+[table]
+[tr] [th] Channel [/th] [th] Function [/th] [th] Value [/th] [/tr]
+[tr] [td] 0 [/td] [td] Recieved Data [/td] [td] [i]Key-value[/i]  ([i].c0{data}[/i]) [/td] [/tr]
+[/table]

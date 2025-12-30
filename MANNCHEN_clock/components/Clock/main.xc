@@ -32,10 +32,6 @@ input.0 ($time:number)
 	$d_time = $time
 
 
-function @sign($value:number) :number
-	return if($value < 0, -1, 1)
-
-
 ; predict where $value has moved to
 function @predict_speed ($target:number, $value:number, $speed:number) :number
 	return min(max($value - $g_delta*$speed, $target), $value + $g_delta*$speed)
@@ -92,15 +88,15 @@ tick
 	
 	$current_value_second = @predict_speed($time, $current_value_second, 60*$hand_speed)
 	$current_value_second = @clamp_difference($time, $current_value_second, 120)
-	$current_pos_second = @animate_directional("SecondJoint", angular_z, @sign($time-$current_value_second)*$hand_speed, $current_pos_second, @target_directional($time, $current_value_second, 60))
+	$current_pos_second = @animate_directional("SecondJoint", angular_z, sign($time-$current_value_second, 1)*$hand_speed, $current_pos_second, @target_directional($time, $current_value_second, 60))
 
 	var $minutes = $time / 60
 	$current_value_minute = @predict_speed($minutes, $current_value_minute, 60*$hand_speed)
 	$current_value_minute = @clamp_difference($minutes, $current_value_minute, 120)
-	$current_pos_minute = @animate_directional("MinuteJoint", angular_z, @sign($minutes-$current_value_minute)*$hand_speed, $current_pos_minute, @target_directional($minutes, $current_value_minute, 60))
+	$current_pos_minute = @animate_directional("MinuteJoint", angular_z, sign($minutes-$current_value_minute, 1)*$hand_speed, $current_pos_minute, @target_directional($minutes, $current_value_minute, 60))
 
 	var $hours = $minutes / 60
 	$current_value_hour = @predict_speed($hours, $current_value_hour, 12*$hand_speed)
 	$current_value_hour = @clamp_difference($hours, $current_value_hour, 24)
-	$current_pos_hour = @animate_directional("HourJoint", angular_z, @sign($hours-$current_value_hour)*$hand_speed, $current_pos_hour, @target_directional($hours, $current_value_hour, 12))
+	$current_pos_hour = @animate_directional("HourJoint", angular_z, sign($hours-$current_value_hour, 1)*$hand_speed, $current_pos_hour, @target_directional($hours, $current_value_hour, 12))
 

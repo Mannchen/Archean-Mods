@@ -9,6 +9,7 @@ ${vendor}_infinite
 ${vendor}_clock
 ${vendor}_valvehandle
 ${vendor}_airtightdoor
+${vendor}_lights
 "
 
 if [ -d "$output_dir" ]; then 
