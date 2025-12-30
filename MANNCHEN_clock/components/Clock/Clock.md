@@ -4,7 +4,7 @@
 
 | Component | `Clock` |
 |---|---|
-|**Module**|`Archean_mod`|
+|**Module**|`MANNCHEN_clock`|
 |**Mass**|0.1 kg|
 |[**Size**](# "Based on the component's occupancy in a fixed 25cm grid.")|50 x 50 x 25 cm|
 #

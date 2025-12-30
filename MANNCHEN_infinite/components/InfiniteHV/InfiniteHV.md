@@ -2,7 +2,7 @@
   <img src="InfiniteHV.png" />
 </p>
 
-| Component | `InfiniteHV` |
+| Component | `MANNCHEN_infinite` |
 |---|---|
 |**Module**|`Archean_mod`|
 |**Mass**|1 kg|

@@ -53,7 +53,7 @@ Marine style manually operated airtight door.
 
 
 ## Lights
-![Lights](.images/Lights.jpg)
+![Lights](./images/Lights.jpg)
 
 A collection of different types of light components.
 

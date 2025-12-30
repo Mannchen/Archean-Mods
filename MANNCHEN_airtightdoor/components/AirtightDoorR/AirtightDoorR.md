@@ -4,7 +4,7 @@
 
 | Component | `AirtightDoorR` |
 |---|---|
-|**Module**|`Archean_mod`|
+|**Module**|`MANNCHEN_airtightdoor`|
 |**Mass**|50 kg|
 |[**Size**](# "Based on the component's occupancy in a fixed 25cm grid.")|125 x 25 x 225 cm|
 #
