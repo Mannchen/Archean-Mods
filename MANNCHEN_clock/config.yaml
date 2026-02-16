@@ -1,6 +1,6 @@
 items:
   MANNCHEN_Clock.Clock:
-    max_stack: 64
+    max_stack: 254
 
 inventory_creative_backpack:
   - MANNCHEN_Clock.Clock

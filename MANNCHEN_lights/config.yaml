@@ -1,6 +1,6 @@
 items:
   MANNCHEN_lights.RotaryLight:
-    max_stack: 128
+    max_stack: 256
 
 inventory_creative_backpack:
   - MANNCHEN_lights.RotaryLight

@@ -1,8 +1,8 @@
 items:
   MANNCHEN_AirtightDoor.AirtightDoorL:
-    max_stack: 12
+    max_stack: 64
   MANNCHEN_AirtightDoor.AirtightDoorR:
-    max_stack: 12
+    max_stack: 64
 
 inventory_creative_backpack:
   - MANNCHEN_AirtightDoor.AirtightDoorL
@@ -16,8 +16,8 @@ recipes:
     input:
       ARCHEAN_parts.Casing: 40
       ARCHEAN_parts.Screw: 40
-      ARCHEAN_build.SmallHinge: 2
-      Archean_build.SteelBlock: 20
+      ARCHEAN_parts.Connector: 1
+      ARCHEAN_build.SteelBlock: 20
     output:
       MANNCHEN_AirtightDoor.AirtightDoorL: 1
 
@@ -28,7 +28,7 @@ recipes:
     input:
       ARCHEAN_parts.Casing: 40
       ARCHEAN_parts.Screw: 40
-      ARCHEAN_build.SmallHinge: 2
-      Archean_build.SteelBlock: 20
+      ARCHEAN_parts.Connector: 1
+      ARCHEAN_build.SteelBlock: 20
     output:
       MANNCHEN_AirtightDoor.AirtightDoorR: 1
