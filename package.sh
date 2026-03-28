@@ -10,6 +10,7 @@ ${vendor}_clock
 ${vendor}_valvehandle
 ${vendor}_airtightdoor
 ${vendor}_lights
+${vendor}_fluids
 "
 
 if [ -d "$output_dir" ]; then 
@@ -67,7 +68,13 @@ for package in $packages; do
 						cp "$dir/$name.png" "$component_output_dir/$name.png"
 						[ "$dir/$name.png" -nt "$package_zip" ] && changes="yes"
 					fi
-					# TODO: add files created for sharp edges
+
+					# add sharp edges
+					sharp_edges_files=$(find "$dir" -type f \( -name "$name.*.sharp_edges.bin" -o -name "$name.*.vertices.bin" \) )
+					for se_file in $sharp_edges_files; do
+						cp "$se_file" "$component_output_dir/"
+						[ "$se_file" -nt "$package_zip" ] && changes="yes"
+					done
 
 					# add all xc files
 					xenoncode_files=$(find "$dir" -type f -name "*.xc") 

@@ -1,0 +1,70 @@
+items:
+  MANNCHEN_fluids.CheckValve:
+    max_stack: 256
+  MANNCHEN_fluids.Chiller:
+    max_stack: 64
+  MANNCHEN_fluids.HeatExchanger:
+    max_stack: 64
+  MANNCHEN_fluids.InlineTank:
+    max_stack: 256
+  MANNCHEN_fluids.PipeSensor:
+    max_stack: 256
+
+inventory_creative_backpack:
+  - MANNCHEN_fluids.CheckValve
+  - MANNCHEN_fluids.Chiller
+  - MANNCHEN_fluids.HeatExchanger
+  - MANNCHEN_fluids.InlineTank
+  - MANNCHEN_fluids.PipeSensor
+
+recipes:
+  - label: Chiller
+    context: crafter
+    category: components
+    time: 10
+    input:
+      ARCHEAN_parts.Casing: 200
+      ARCHEAN_parts.GoldPlatedCircuit: 1
+      ARCHEAN_parts.Connector: 6
+      ARCHEAN_thruster.FluidPump: 1
+      ARCHEAN_celestial.Copper: 50000
+    output:
+      MANNCHEN_fluids.Chiller: 1
+  - label: CheckValve
+    context: crafter
+    category: components
+    time: 1
+    input:
+      ARCHEAN_parts.Casing: 1
+      ARCHEAN_parts.Connector: 2
+    output:
+      MANNCHEN_fluids.CheckValve: 1
+  - label: InlineTank
+    context: crafter
+    category: components
+    time: 5
+    input:
+      ARCHEAN_parts.Casing: 1
+      ARCHEAN_parts.Connector: 3
+      ARCHEAN_celestial.Aluminium: 10000
+    output:
+      MANNCHEN_fluids.InlineTank: 1
+  - label: HeatExchanger
+    context: crafter
+    category: components
+    time: 10
+    input:
+      ARCHEAN_parts.Casing: 200
+      ARCHEAN_parts.Connector: 6
+      ARCHEAN_celestial.Copper: 100000
+    output:
+      MANNCHEN_fluids.HeatExchanger: 1
+  - label: PipeSensor
+    context: crafter
+    category: components
+    time: 1
+    input:
+      ARCHEAN_PARTS.Connectior: 3
+      ARCHEAN_parts.Casing: 1
+    output:
+      MANNCHEN_fluids.PipeSensor: 1

@@ -6,6 +6,7 @@
   - [ValveHandle](#ValveHandle)
   - [AirtightDoor](#AirtightDoor)
   - [Lights](#Lights)
+  - [Fluid components](#Fluid-components)
 - [Install](#Install)
 
 ---
@@ -62,6 +63,19 @@ A collection of different types of light components.
 
 ---
 
+## Fluid components
+![Fluid components](./images/Fluids.jpg)
+
+A collection of fluid components.
+
+### Documentation
+- [CheckValve](./MANNCHEN_fluids/components/CheckValve/CheckValve.md)
+- [Chiller](./MANNCHEN_fluids/components/Chiller/Chiller.md)
+- [HeatExchanger](./MANNCHEN_fluids/components/HeatExchanger/HeatExchanger.md)
+- [InlineTank](./MANNCHEN_fluids/components/InlineTank/InlineTank.md)
+- [PipeSensor](./MANNCHEN_fluids/components/PipeSensor/PipeSensor.md)
+
+
 ## Install
 
 ### get the mods from the steam workshop
@@ -75,6 +89,7 @@ or
   - [MANNCHEN_valvehandle.zip](https://github.com/Mannchen/Archean-Mods/releases/latest/download/MANNCHEN_valvehandle.zip)
   - [MANNCHEN_airtightdoor.zip](https://github.com/Mannchen/Archean-Mods/releases/latest/download/MANNCHEN_airtightdoor.zip)
   - [MANNCHEN_lights.zip](https://github.com/Mannchen/Archean-Mods/releases/latest/download/MANNCHEN_lights.zip)
+  - [MANNCHEN_fluids.zip](https://github.com/Mannchen/Archean-Mods/releases/latest/download/MANNCHEN_fluids.zip)
   - [_All-mods.zip](https://github.com/Mannchen/Archean-Mods/releases/latest/download/_All-mods.zip)
 
 - unzip and copy the mods you want into `...steamapps/common/Archean/Archean-data/mods/`.
