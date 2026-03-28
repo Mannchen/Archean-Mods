@@ -61,8 +61,6 @@ A collection of different types of light components.
 ### Documentation
 - [RotaryLight](./MANNCHEN_lights/components/RotaryLight/RotaryLight.md)
 
----
-
 ## Fluid components
 ![Fluid components](./images/Fluids.jpg)
 
@@ -75,6 +73,7 @@ A collection of fluid components.
 - [InlineTank](./MANNCHEN_fluids/components/InlineTank/InlineTank.md)
 - [PipeSensor](./MANNCHEN_fluids/components/PipeSensor/PipeSensor.md)
 
+---
 
 ## Install
 
