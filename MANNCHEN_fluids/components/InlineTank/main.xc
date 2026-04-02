@@ -23,6 +23,9 @@ function @add_fluid($fluid :text, $temperature :number) :text
 	var $fluidMass = 0
 	foreach $fluid ($f, $m)
 		$fluidMass += $m
+
+	if $fluidMass == 0
+		return ""
 	
 	var $fractionAdded = clamp(($TANK_CAPACITY - $s_tankContentsMass) / $fluidMass, 0, 1)
 
@@ -39,6 +42,9 @@ function @add_fluid($fluid :text, $temperature :number) :text
 
 ; remove fluid from tank
 function @remove_fluid($maxMass :number) :text
+	if $maxMass == 0 or $s_tankContentsMass == 0
+		return ""
+
 	var $fractionRemoved = if($s_tankContentsMass != 0, clamp($maxMass / $s_tankContentsMass, 0, 1), 0)
 
 	$s_tankContentsMass -= $s_tankContentsMass * $fractionRemoved

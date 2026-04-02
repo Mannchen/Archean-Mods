@@ -24,6 +24,7 @@ storage var $s_on :number ; chiller on
 storage var $s_targetTemperature :number ; targeted fluid output temperature
 storage var $s_storageInitialized :number ; if storage vars are initialized
 storage var $s_internalHeat :number ; internally stored heat
+storage var $s_powerDeficit :number ; 
 
 var $g_tickPowerDraw :number ; power pulled this tick
 var $g_playSound :number ; for delay before stopping sound
@@ -48,7 +49,7 @@ function @efficiency($fluidTemp :number) :number
 ; get coolad output temperature of fluid
 ; also draws power for cooling operation
 function @calc_output_temp_fluid($mass :number, $inputTemp :number) :number
-	if !$s_on ; if not on do nothing
+	if !$s_on or $s_powerDeficit > 0 or $mass <= 0 ; if not on do nothing
 		return $inputTemp
 	; get theoretical output temperature 
 	var $coolingTemp = $inputTemp - max($s_targetTemperature, @internal_temp()-$COOLING_MAX)
@@ -58,11 +59,9 @@ function @calc_output_temp_fluid($mass :number, $inputTemp :number) :number
 	var $efficiency = @efficiency($inputTemp)
 	var $powerRequired = min(1000 * $mass * $coolingTemp * $efficiency * system_frequency, ($POWER_DRAW_MAX - $g_tickPowerDraw))
 	; pull power
-	var $powerReceived = pull_power("hv", 400, $powerRequired)
-	$g_tickPowerDraw += $powerReceived
-	; get actual output temperature based on power received
-	var $outputTemp = $inputTemp - $powerReceived / system_frequency / 1000 / $efficiency / $mass
-	return $outputTemp
+	$g_tickPowerDraw += $powerRequired
+
+	return $inputTemp - $coolingTemp
 
 ; add heat removed from fluid + waste heat form power to internal buffer
 function @transfer_heat_fluid($mass :number, $inputTemp :number, $outputTemp :number)
@@ -248,10 +247,17 @@ function @info_status()
 
 array $a_soundPitch :number
 tick
+	; passive power draw
+	if $s_powerDeficit <= 0
+		$g_tickPowerDraw += 20
+
+	; draw power
+	var $power_Received = pull_power("hv", 300, $g_tickPowerDraw + $s_powerDeficit)
+	$s_powerDeficit += $g_tickPowerDraw - $power_Received
+	$g_tickPowerDraw = $power_Received
+
 	; show ui when chiller has power
-	if $g_tickPowerDraw == 0
-		$g_tickPowerDraw += pull_power("hv", 300, 20) ; passive power draw TODO: maybe game bug when drawing power multiple times
-	if $g_tickPowerDraw > 0
+	if $s_powerDeficit <= 0
 		@draw_ui()
 	else
 		$screen.blank(black)
@@ -260,7 +266,7 @@ tick
 	@info_status()
 
 	; smoothing for sound volume&pitch based on load
-	if $g_tickPowerDraw > 20
+	if $g_tickPowerDraw > 40
 		if $g_playSound < 25
 			$g_playSound += 10
 	else
