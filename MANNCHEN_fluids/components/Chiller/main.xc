@@ -16,7 +16,7 @@ include "basics_text.xc"
 var $screen = screen("screen")
 
 const $INTERNAL_MASS = 20 ; in archean all fluids have heat capacity of 1000 J/kg/K
-const $COOLING_MAX = 150 ; K below internal temp
+const $COOLING_MAX = 300 ; K below internal temp
 const $POWER_DRAW_MAX = 2000000 ; max power draw 2MW
 
 

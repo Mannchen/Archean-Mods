@@ -1,0 +1,77 @@
+[code]ModID: MANNCHEN_fluids[/code]
+[h1] Fluid components [/h1]
+[h2] Components [/h2]
+[list]
+[*] CheckValve
+[*] Chiller
+[*] HeatExchanger
+[*] InlineTank
+[*] PipeSensor
+[/list]
+
+[h2] Documentation [/h2]
+[h3] CheckValve [/h3]
+
+[u] Description [/u]
+The Check Valve will only let fluid pass in one direction, indicated by the arrow on the side.
+
+[h3] Chiller [/h3]
+
+[u] Description [/u]
+The Chiller cools fluids pumped through the fluid ports on the side down to a selected temperature.
+
+[u] Usage [/u]
+Pump fluid through the fluid ports on the side. The Chiller will cool the fluid to the temperature selected via the 
+screen or data input.  
+The Chiller needs a data signal on channel 0 and power to operate.  
+The heat removed from the fluid and waste heat is transfered into the component and must be removed by pumping fluid 
+through the fluid ports in the back.
+Fluid can only be cooled to 300K below the Chiller's core temperature.  
+The Chiller can consume up to 2MW of power.
+
+[code]The chiller has no internal fluid buffer. Make sure the fluid has somewhere to go or no fluid will flow 
+(pumping a full tank into itself will not work) [/code]
+
+
+[u] List of inputs [/u]
+[table]
+[tr] [th] Channel [/th] [th] Function [/th] [th] Value [/th] [/tr]
+[tr] [td] 0 [/td] [td] On/Off [/td] [td] `0` or `1` [/td] [/tr]
+[tr] [td] 1 [/td] [td] Target temperature [/td] [td] Kelvin [/td] [/tr]
+[/table]
+
+
+[u] List of outputs [/u]
+[table]
+[tr] [th] Channel [/th] [th] Function [/th] [th] Value [/th] [/tr]
+[tr] [td] 0 [/td] [td] Fluid output temperature [/td] [td] Kelvin [/td] [/tr]
+[tr] [td] 1 [/td] [td] Coolant output temperature [/td] [td] Kelvin [/td] [/tr]
+[/table]
+
+[h3] HeatExchanger [/h3]
+
+[u] Description [/u]
+The HeatExchanger transfers heat between fluid pumped through the top, bottom (shell) and front, back (tube).
+The HeatExchanger has an internal heat buffer and will store some heat.
+
+[h3] InlineTank [/h3]
+
+[u] Description [/u]
+A small Tank with two fluid ports.
+Capacity: [i]0.02 m³[/i]
+
+[h3] PipeSensor [/h3]
+
+[u] Description [/u]
+PipeSensor is a component that outputs information about fluid flow, temperature and composition through a pipe.
+Flow is measured directionally, and flow in both directions will cancel each other out.
+Composition is mass not percentage.
+
+[u] List of outputs [/u]
+[table]
+[tr] [th] Channel [/th] [th] Function [/th] [th] Value [/th] [/tr]
+[tr] [td] 0 [/td] [td] Flow [/td] [td] [i]-1.0[/i] to [i]1.0[/i] [/td] [/tr]
+[tr] [td] 1 [/td] [td] Temperature [/td] [td] Kelvin [/td] [/tr]
+[tr] [td] 2 [/td] [td] Composition [/td] [td] [i]Key-value[/i] [/td] [/tr]
+[/table]
+

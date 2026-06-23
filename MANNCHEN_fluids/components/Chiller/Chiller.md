@@ -20,7 +20,7 @@ screen or data input.
 The Chiller needs a data signal on channel 0 and power to operate.  
 The heat removed from the fluid and waste heat is transfered into the component and must be removed by pumping fluid 
 through the fluid ports in the back.
-Fluid can only be cooled to 150K below the Chiller's core temperature.  
+Fluid can only be cooled to 300K below the Chiller's core temperature.  
 The Chiller can consume up to 2MW of power.
 
 > The chiller has no internal fluid buffer. Make sure the fluid has somewhere to go or no fluid will flow
