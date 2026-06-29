@@ -1,3 +1,5 @@
+include "basics_text.xc"
+
 #DATAPORT output "data" 0 "Flow (kg/tick}"
 #DATAPORT output "data" 1 "Temperature (K)"
 #DATAPORT output "data" 2 "Composition (k/v)"
@@ -73,11 +75,11 @@ tick
 	output.0($tick_flow, $tick_temp, $tick_comp)
 
 	; set info text
-	set_info("flow", text("{0.00} kg/s", $tick_flow * system_frequency))
+	set_info("flow", @format_unit($tick_flow * 1000 * system_frequency, "g/s"))
 	set_info("temp", text("{0.00} K", $tick_temp))
 	var $comp_text = ""
 	foreach $tick_comp ($k, $v)
-		$comp_text &= text("\n--- {}: {0.00} kg/s", $k, $v * system_frequency)
+		$comp_text &= text("\n--- {}: {}", $k, @format_unit($v * 1000 * system_frequency, "g/s"))
 	set_info("comp", $comp_text)
 
 	; reset per tick values

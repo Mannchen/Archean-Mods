@@ -1,3 +1,4 @@
+include "basics_text.xc"
 ; HeatExchanger
 
 #INFO text_info "core" "" "Core"
@@ -10,10 +11,12 @@ const $INTERNAL_MASS = 100 ; kg
 storage var $s_internalHeat :number
 storage var $s_storageInitialized :number
 
+var $status_shellMass :number
 var $status_shellInputTemp :number
 var $status_shellOutputTemp :number
 var $status_tubeInputTemp :number
 var $status_tubeOutputTemp :number
+var $status_tubeMass :number
 
 
 ; returns temperature of the core
@@ -52,14 +55,15 @@ accept_push_fluid($port :text, $molecule :text, $mass :number, $temperature :num
 	var $acceptedMass = push_fluid($oppositePort, $molecule, $mass * $potential, $outputTemperature)
 	@change_internal_heat($acceptedMass, $temperature, $outputTemperature)
 	$mass -= $acceptedMass
-
 	
 	if $port == "fluidTop" or $port == "fluidBottom"
 		$status_shellInputTemp = $temperature
 		$status_shellOutputTemp = $outputTemperature
+		$status_shellMass += $acceptedMass
 	elseif $port == "fluidFront" or $port == "fluidBack"
 		$status_tubeInputTemp = $temperature
 		$status_tubeOutputTemp = $outputTemperature
+		$status_tubeMass += $acceptedMass
 
 accept_pull_fluid($port :text, $maxMass :number, $out_composition :text, $out_temperature :number)
 	var $oppositePort = @get_opposite_port($port)
@@ -78,9 +82,11 @@ accept_pull_fluid($port :text, $maxMass :number, $out_composition :text, $out_te
 	if $port == "fluidTop" or $port == "fluidBottom"
 		$status_shellInputTemp = $pulledFluid_temp
 		$status_shellOutputTemp = $out_temperature
+		$status_shellMass -= $pulledMass
 	elseif $port == "fluidFront" or $port == "fluidBack"
 		$status_tubeInputTemp = $pulledFluid_temp
 		$status_tubeOutputTemp = $out_temperature
+		$status_tubeMass -= $pulledMass
 
 
 init
@@ -92,17 +98,19 @@ init
 tick
 	set_info("core", text("{}K", @internal_temperature()))
 	if $status_shellInputTemp > 0
-		set_info("fluid_shell", text("{}K -> {}K", $status_shellInputTemp, $status_shellOutputTemp))
+		set_info("fluid_shell", text("{}K -> {}K ({})", $status_shellInputTemp, $status_shellOutputTemp, @format_unit($status_shellMass*1000*system_frequency, "g/s")))
 	else
 		set_info("fluid_shell", "---")
 	
 	if $status_tubeInputTemp > 0
-		set_info("fluid_tube", text("{}K -> {}K", $status_tubeInputTemp, $status_tubeOutputTemp))
+		set_info("fluid_tube", text("{}K -> {}K ({})", $status_tubeInputTemp, $status_tubeOutputTemp, @format_unit($status_tubeMass*1000*system_frequency, "g/s")))
 	else
 		set_info("fluid_tube", "---")
 
 	; reset per tick variables
+	$status_shellMass = 0
 	$status_shellInputTemp = 0
 	$status_shellOutputTemp = 0
 	$status_tubeInputTemp = 0
 	$status_tubeOutputTemp = 0
+	$status_tubeMass = 0

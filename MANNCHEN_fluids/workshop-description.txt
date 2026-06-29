@@ -24,14 +24,10 @@ The Chiller cools fluids pumped through the fluid ports on the side down to a se
 Pump fluid through the fluid ports on the side. The Chiller will cool the fluid to the temperature selected via the 
 screen or data input.  
 The Chiller needs a data signal on channel 0 and power to operate.  
-The heat removed from the fluid and waste heat is transfered into the component and must be removed by pumping fluid 
+The heat removed from the fluid and waste heat is transfered into the component core and must be removed by pumping fluid 
 through the fluid ports in the back.
 Fluid can only be cooled to 300K below the Chiller's core temperature.  
 The Chiller can consume up to 2MW of power.
-
-[code]The chiller has no internal fluid buffer. Make sure the fluid has somewhere to go or no fluid will flow 
-(pumping a full tank into itself will not work) [/code]
-
 
 [u] List of inputs [/u]
 [table]

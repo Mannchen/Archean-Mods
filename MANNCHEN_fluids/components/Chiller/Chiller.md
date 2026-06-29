@@ -7,24 +7,22 @@
 |**Module**|`MANNCHEN_fluids`|
 |**Mass**|200 kg|
 |[**Size**](# "Based on the component's occupancy in a fixed 25cm grid.")|125 x 100 x 175 cm|
-|**Push/Pull Fluid**| accept Push/Pull -> forwards action to other side|
+|**Push/Pull Fluid**| Accept Push, Initiate Push |
 #
 ---
 
 # Description
-The Chiller cools fluids pumped through the fluid ports on the side down to a selected temperature.
+The Chiller is a component that cools down fluids to a selected temperature.
+transfering the heat into another fluid.
 
 # Usage
-Pump fluid through the fluid ports on the side. The Chiller will cool the fluid to the temperature selected via the 
+Push fluid into the fluid input on the side of the component. The Chiller will cool the fluid to the temperature selected via the 
 screen or data input.  
 The Chiller needs a data signal on channel 0 and power to operate.  
-The heat removed from the fluid and waste heat is transfered into the component and must be removed by pumping fluid 
-through the fluid ports in the back.
+The heat removed from the fluid and extra waste heat is transfered into the component core and must be removed by pumping fluid into the back of the component as coolant.
+The Chiller will push fluid out through output ports on the same side. It can also hold a small amount of fluid and coolant.  
 Fluid can only be cooled to 300K below the Chiller's core temperature.  
-The Chiller can consume up to 2MW of power.
-
-> The chiller has no internal fluid buffer. Make sure the fluid has somewhere to go or no fluid will flow
-> (pumping a full tank into itself will not work).
+The Chiller can consume up to 2MW of power.  
 
 
 ### List of inputs
